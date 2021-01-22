@@ -1,6 +1,12 @@
 # Forensics  
 ## The Office Trouble I  
 
+```
+CHALLENGE DESCRIPTION
+Dwight has taken Jim's client folder and encrypted it ! Get those clients back !
+```
+[Source](https://beta.traboda.com/challenge/99)
+
 Here we were given a zip file and we need to crack the password of the zip file.  
 
 So we will use **fcrackzip** to crack the password of zip file.    
