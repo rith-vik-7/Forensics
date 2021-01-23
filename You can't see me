@@ -1,0 +1,25 @@
+# Forensics  
+## You can't see me  
+
+```
+CHALLENGE DESCRIPTION
+We have received an image but seems like somebody has messed up with the data. Can you help us?
+```
+[IMAGE.PNG](https://vpframework.s3.amazonaws.com/files/challenge/av_b1259c35-100d-40a6-a049-6ee86200d234.png)  
+
+Here, the png data was messed up. So, we can check this by **pngcheck** and correct the corresponding error with **ghex**.  
+
+Firstly, If we look into the hex data, We can observe that magic numbers are not coorect. 
+
+Then, We can correct the magic numbers and the first chunk from *IDHR* to *IHDR*.
+
+Now, pngcheck shows an error with reserved-bit-set chunk *gama*. We need to correct it to *gAMA*.  
+
+Now, pngcheck shows an error with reserved-bit-set chunk *idat*. We need to correct it to *IDAT*.  
+
+Now, pngcheck shows an error with reserved-bit-set chunk *INED*. We need to correct it to *IEND*.  
+
+Finaly pngcheck shows ```OK: 1.png (269x200, 24-bit RGB, non-interlaced, 72.8%).```  
+
+Now, we will get our flag in the png.  
+```inctfj{WH4t_ar3_pNgCHUnks?}```
