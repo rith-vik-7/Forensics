@@ -23,7 +23,7 @@ fileo.close()
 This python program will reverse us the file.  
 
 Using `strings` + `grep` on the output file `a.txt` will give us the flag.  
-![1](https://github.com/rith-vik-7/Forensics/blob/main/Images/reverse.png)
+![1](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/reverse.png)
 
 flag: `inctf{Y0u_ar3_g00d_4t_rev3rs1ng_1_gu3ss}`
 
@@ -48,7 +48,7 @@ InCtF{G00d_jobb!!This_is_the_2nd_on3}.
 We can get the other flag from `xxd`
 
 Looking into `xxd`, We will find this 
-![xxd](https://github.com/rith-vik-7/Forensics/blob/main/Images/strangerthings.png)
+![xxd](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/strangerthings.png)
 
 combining all the letters of the flag by removing '.' between them gives us the flag.  
 flag: `inctf{th1s_1s_th3_l4st_0ne}`
@@ -65,15 +65,15 @@ We got two files which are claimed to be almost same. If we find the differnce b
 
 [vimdiff](https://www.tutorialspoint.com/vim/vim_diff.htm) is a part of vim, that show differences between files.  
 
-![1](https://github.com/rith-vik-7/Forensics/blob/main/Images/twin1.png)  
+![1](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/twin1.png)  
 
-![2](https://github.com/rith-vik-7/Forensics/blob/main/Images/twin2.png)  
+![2](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/twin2.png)  
 
-![3](https://github.com/rith-vik-7/Forensics/blob/main/Images/twin3.png)  
+![3](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/twin3.png)  
 
-![4](https://github.com/rith-vik-7/Forensics/blob/main/Images/twin4.png)  
+![4](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/twin4.png)  
 
-![5](https://github.com/rith-vik-7/Forensics/blob/main/Images/twin5.png)  
+![5](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/twin5.png)  
 
 combining all the letters where there is a difference gives us the flag.  
 flag: `inctf{y0u_Gotm3}`
