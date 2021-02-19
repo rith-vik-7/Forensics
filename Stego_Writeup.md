@@ -40,7 +40,7 @@ We got some random function which was difficult to solve. So I went for Stegsolv
 
 Finally, I got a new QR code in plane `RED 0`. 
 
-![SS_challenge2](https://github.com/rith-vik-7/Forensics/blob/main/Images/ss.png)
+![SS_challenge2](https://github.com/rith-vik-7/Forensics-traboda/blob/main/Images/ss.png)
 
 I scanned this with `zbarimg`, and got the flag.  
 `VolgaCTF{5t3g0_m4tr3shk4_in_4cti0n}`
