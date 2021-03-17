@@ -70,3 +70,27 @@ flag: `inctf{_s0meTim3s_u_h4v3_t0_look_3v3ryWh3r3_cl0s3r_T0_G3T_th3_wh0l3!}`
 
 ### Orcish  
 
+From *Protocol Hierarchy* we can observe that there are DNS, TLS, TCP, HTTP and ICMP packets.  
+
+![Protocol](https://github.com/rith-vik-7/Forensics/blob/main/Images/orcish1.PNG)  
+
+On further analysis of packets I found nothing at start but in `ICMP` layer, I found signature header of **GIF** like each byte in each packet..So I extracted that using scapy
+
+```
+from scapy.all import *
+
+r = rdpcap("data.pcap")
+b=''
+
+for x in r:
+	if x.haslayer(ICMP) and x[IP].src == '10.136.255.127' and x[IP].dst == '45.58.48.13':
+		b +=(bytes(x).hex())[68]
+		b +=(bytes(x).hex())[69]
+
+f = open('flag.gif','wb')
+f.write(bytes.fromhex(b))
+f.close()
+```
+
+![flag](https://github.com/rith-vik-7/Forensics/blob/main/Images/flag.gif)  
+flag: `flag{we_ride_at_midnight}`
