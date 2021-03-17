@@ -40,5 +40,33 @@ flag: `shellmates{icmp_p@yl04d_4in't_us3l3ss_4ft3r_4ll_r1gHt?}`
 
 ### Biz44re  
 
+From *Protocol Hierarchy* we can observe that there are DNS, TLS, TCP, HTTP, IGMP and ICMP packets.  
+
+![Protocol](https://github.com/rith-vik-7/Forensics/blob/main/Images/bizz1.PNG)  
+
+Here I found some hex values in **ASCII dump**.. then I extracted those hex values using scapy
+```
+from scapy.all import *
+f = rdpcap('bizz.pcap')
+b=''
+for x in f[ICMP]:
+	if x[IP].src == '10.30.8.102' and x[IP].dst == '192.168.42.83':
+		b+=str(x)[142:]	
+c=''
+for i in range(0,len(b),2):
+    a = ""
+    a += b[i]
+    a += b[i+1]
+    c +=  chr(int(a, 16))
+g = open("bizz.zip", "wb")
+g.write(c)
+g.close()
+```
+
+Then I got a [zip](https://github.com/rith-vik-7/Forensics/blob/main/Images/bizz.zip), which on extracting gave me the flag. 
+
+![flag](https://github.com/rith-vik-7/Forensics/blob/main/Images/flag.png)  
+flag: `inctf{_s0meTim3s_u_h4v3_t0_look_3v3ryWh3r3_cl0s3r_T0_G3T_th3_wh0l3!}`
+
 ### Orcish  
 
