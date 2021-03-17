@@ -15,7 +15,9 @@ flag: `picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}`
 
 ### It's Complicated My Pal  
 
-From *Protocol Hierarchy* we can observe that there are DNS, TLS, TCP, IGMP and ICMP packets. So after analysing all the layers, I found **PK** in `ICMP` layer, so looking into it deeply gave me a result like I need to filter the `IP` too else some extra unwanted packets will be remained. So `icmp && ip.src == 192.168.1.200 && ip.dst == 185.245.99.2` filter in wireshark gave me the required packets.
+From *Protocol Hierarchy* we can observe that there are DNS, TLS, TCP, IGMP and ICMP packets.
+![Protocol](https://github.com/rith-vik-7/Forensics/blob/main/Images/Capture1.PNG)
+So after analysing all the layers, I found **PK** in `ICMP` layer, so looking into it deeply gave me a result like I need to filter the `IP` too else some extra unwanted packets will be remained. So `icmp && ip.src == 192.168.1.200 && ip.dst == 185.245.99.2` filter in wireshark gave me the required packets.
 
 So, to extract those packets I used the following script  
 ```
